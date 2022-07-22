@@ -6,11 +6,12 @@ function getComputerChoice () {
     return(computer_choice);
 }
 
-
+let winner=1; //computer wins
 function playRound (playerSelection,computerSelection) {
-    if (playerSelection === computerSelection) {
+    if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         //Draw, play again
         alert("Draw! Play again!");
+        winner = 0; //Draw
     }
     else if ((playerSelection.toLowerCase() === "rock")&&(computerSelection.toLowerCase() === "paper")) {
         // computer wins
@@ -19,10 +20,12 @@ function playRound (playerSelection,computerSelection) {
     else if ((playerSelection.toLowerCase() === "paper")&&(computerSelection.toLowerCase() === "rock")) {
         // player wins
         alert("You Win! Paper beats Rock");
+        winner = -1;
     }
     else if ((playerSelection.toLowerCase() === "rock")&&(computerSelection.toLowerCase() === "scissors")) {
         // player wins
         alert("You Win! Rock beats Scissors");
+        winner = -1;
     }
     else if ((playerSelection.toLowerCase() === "scissors")&&(computerSelection.toLowerCase() === "rock")) {
         // computer wins
@@ -35,13 +38,32 @@ function playRound (playerSelection,computerSelection) {
     else if ((playerSelection.toLowerCase() === "scissors")&&(computerSelection.toLowerCase() === "paper")) {
        // player wins 
        alert("You win! Scissors beats Paper");
+       winner = -1;
     }
 }
 
 function game() {
+    let computerWin = 0, userWin = 0;
     for (let i = 0; i < 5; i++) {
         let userInput = prompt("Enter your Play [Rock,Paper,or Scissors]");
-        console.log(playRound(userInput,getComputerChoice()));
-     }
+        let round = playRound(userInput,getComputerChoice());
+        if (winner === 1){
+            computerWin+=1;
+        }
+        else if (winner === -1) {
+            userWin+=1;
+        }
+    }
+
+    if (computerWin > userWin) {
+        alert("You Lose! The Computers Won");
+    }
+    else if (userWin > computerWin) {
+        alert("You Won! You defeated the Computers.");
+    }
+    else {
+        alert("You Drew with the Robots. Play again!");
+        game();
+    }
 }
 
