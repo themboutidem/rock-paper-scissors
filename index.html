@@ -5,14 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WHO GO CASH OUT?</title>
-        <link rel="rminashortcut icon" href="./pics/battle.png" type="image/x-icon">
+        <link rel="rminashortcut icon" href="imgs/battle.png" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <script src="script.js"></script>
         <div class="title">
-            <h1>USER vs IYA TAO</h1>
+            <h1>YOU</h1> <h2>vs</h2> <h1> IYA TAO</h1>
         </div>
         <div class="premise">
             <strong>PREMISE:</strong>
@@ -20,6 +19,9 @@
                 Apparently, you owe Iya Tao and the Women's Society Ajo Money. Basically, valid grounds for a severe spanking.
                 You must win Iya Tao at a game of Rock Paper Scissors (with a lil twist) in order to escape.
                 Otherwise... Well, I don't know what happens, because no one has lived to tell!
+            </p>
+            <p>
+                FIRST TO 5 WINS!
             </p>
         </div>
 
@@ -29,19 +31,19 @@
             <div id="brackets">]</div>
         </div>
 
-        <div class="weapons">
-            <div class="w-sub">
-                <img src="/imgs/sandals.png">
+        <div id="weapons">
+            <button id="rock">
+                <img src="imgs/sandals.png">
                 <p id="weapons-text">ROCK</p>
-            </div>
-            <div class="w-sub">
-                <img src="/imgs/slap.svg">
+            </button>
+            <button id="paper">
+                <img src="imgs/slap.svg">
                 <p id="weapons-text">PAPER</p>
-            </div>
-            <div class="w-sub">
-                <img src="/imgs/belt.png">
+            </button>
+            <button id="scissors">
+                <img src="imgs/belt.png">
                 <p id="weapons-text">SCISSORS</p>
-            </div>
+            </button>
         </div>
 
         <div class="sub-title">
@@ -51,26 +53,24 @@
         </div>
 
         <div class="output">
+            <p id="text-box">
+            </p>
             <div class="game-results">
                 <div class="user-output">
-                    <p class="user-score"> </p>
-                    <p id="user-name">USER</p>
+                    <p id="user-score">0</p>
+                    <p id="user-name">YOU</p>
                 </div>
                 <div class="iya-output">
-                    <p class="iya-score"> </p>
+                    <p id="iya-score">0</p>
                     <p id="computer">IYA TAO</p>
                 </div>
-            </div>
-            <div class="text-box">
-                <div id="brackets">[</div>
-                <div id="output"> </div>
-                <div id="brackets">]</div>
             </div>
         </div>
 
         <div class="footer">
-            <a href="https://github.com/themboutidem/rock-paper-scissors/tree/rps-ui"><img src="/imgs/github.png"></a>
+            <a href="https://github.com/themboutidem/rock-paper-scissors/tree/rps-ui"><img src="imgs/github.png"></a>
             <h3>© Mboutidem Mkpong, 2022</h3>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>
